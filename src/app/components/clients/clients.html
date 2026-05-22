@@ -1,0 +1,68 @@
+<section id="clientes" class="clients">
+  <div class="container">
+    <h2 class="section-title">Nuestros Clientes</h2>
+    <p class="section-subtitle">
+      Atendemos sectores con alta estabilidad laboral y capacidad de pago a nivel nacional
+    </p>
+
+    <div class="clients-grid">
+      @for (client of clients; track client.name) {
+        <div class="client-card" [style.background]="client.lightBg" (click)="open(client)">
+          <div class="client-avatar" [style.borderColor]="'rgba(255,255,255,0.9)'" [style.boxShadow]="'0 4px 20px ' + client.color + '40'">
+            <img [src]="client.image" [alt]="client.name" class="client-photo">
+          </div>
+          <h3 [style.color]="client.color">{{ client.name }}</h3>
+          <p>{{ client.description }}</p>
+          <span class="client-badge" [style.background]="client.color" [style.color]="'#fff'">Ver más información</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+@if (selected) {
+  <div class="modal-backdrop" (click)="close()">
+    <div class="modal" (click)="$event.stopPropagation()">
+
+      <div class="modal-hero" [style.backgroundImage]="'url(' + selected.image + ')'" [style.backgroundPosition]="selected.imgPosition">
+        <div class="modal-hero-overlay">
+          <h2 class="modal-title">{{ selected.name }}</h2>
+          <p class="modal-subtitle">{{ selected.description }}</p>
+        </div>
+        <button class="modal-close" (click)="close()" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 class="modal-section-title">¿Qué ofrecemos?</h4>
+          <ul class="modal-list">
+            @for (detail of selected.details; track detail) {
+              <li>
+                <svg viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" stroke="#1A73C8" stroke-width="1.5"/>
+                  <path d="M6 10l3 3 5-5" stroke="#1A73C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {{ detail }}
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">Pagadurías referentes</h4>
+          <p class="modal-pagaduria-text">{{ selected.pagaduriaText }}</p>
+        </div>
+
+        <button class="modal-cta" (click)="close()">
+          Solicitar asesoría
+        </button>
+      </div>
+
+    </div>
+  </div>
+}
