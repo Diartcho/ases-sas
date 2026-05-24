@@ -10,7 +10,7 @@
       <span></span>
     </button>
 
-    <ul class="nav-links" [class.open]="isMobileMenuOpen()">
+    <ul class="nav-links nav-links-desktop" [class.open]="isMobileMenuOpen()">
       <li><a (click)="scrollTo('inicio')">Inicio</a></li>
       <li><a (click)="scrollTo('quienes-somos')">Quiénes Somos</a></li>
       <li><a (click)="scrollTo('servicios')">Servicios</a></li>
@@ -22,6 +22,18 @@
     </ul>
   </div>
 </nav>
+
+<!-- Menú móvil fuera del nav para evitar problemas con transform -->
+<ul class="nav-links nav-links-mobile" [class.open]="isMobileMenuOpen()">
+  <li><a (click)="scrollTo('inicio')">Inicio</a></li>
+  <li><a (click)="scrollTo('quienes-somos')">Quiénes Somos</a></li>
+  <li><a (click)="scrollTo('servicios')">Servicios</a></li>
+  <li><a (click)="scrollTo('clientes')">Clientes</a></li>
+  <li><a (click)="scrollTo('contacto')">Contacto</a></li>
+  <li>
+    <button class="btn-solicitar" (click)="scrollTo('contacto')">Solicitar Asesoría</button>
+  </li>
+</ul>
 
 @if (isMobileMenuOpen()) {
   <div class="overlay" (click)="closeMenu()"></div>
@@ -36,3 +48,4 @@
   <span></span>
   <span></span>
 </button>
+
