@@ -1,4 +1,4 @@
-<nav class="navbar" [class.scrolled]="isScrolled()" [class.menu-open]="isMobileMenuOpen()">
+<nav class="navbar" [class.scrolled]="isScrolled()" [class.menu-open]="isMobileMenuOpen()" [class.nav-hidden]="isHidden()">
   <div class="container nav-container">
     <div class="brand" (click)="scrollTo('inicio')">
       <img src="img/aces-logo.png" alt="Grupo Empresarial ACES S.A.S." class="brand-logo">
@@ -26,3 +26,13 @@
 @if (isMobileMenuOpen()) {
   <div class="overlay" (click)="closeMenu()"></div>
 }
+
+<button class="hamburger-float"
+  [class.visible]="isHidden() || isMobileMenuOpen()"
+  [class.open]="isMobileMenuOpen()"
+  (click)="toggleMenu()"
+  aria-label="Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
