@@ -5,7 +5,9 @@
       <p>Brindamos soluciones financieras con ventajas reales que hacen la diferencia en tu vida</p>
     </div>
 
-    <div class="benefits-carousel">
+    <div class="benefits-carousel"
+         (touchstart)="onTouchStart($event)"
+         (touchend)="onTouchEnd($event)">
       @for (benefit of benefits; track benefit.title; let i = $index) {
         <div class="benefit-slide"
              [class.slide-center]="i === current"
@@ -13,7 +15,7 @@
              [class.slide-right]="i === rightIdx"
              [class.slide-hidden]="i !== current && i !== leftIdx && i !== rightIdx"
              (click)="i === leftIdx ? prev() : i === rightIdx ? next() : null">
-          <img [src]="benefit.image" [alt]="benefit.title" class="benefit-img">
+          <img [src]="benefit.image" [alt]="benefit.title" class="benefit-img" loading="lazy" decoding="async">
           <div class="benefit-overlay">
             <h3>{{ benefit.title }}</h3>
             <p>{{ benefit.description }}</p>

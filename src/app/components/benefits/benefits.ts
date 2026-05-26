@@ -20,6 +20,7 @@ interface Ally {
 })
 export class BenefitsComponent {
   current = 0;
+  private touchStartX = 0;
 
   get leftIdx(): number {
     return (this.current - 1 + this.benefits.length) % this.benefits.length;
@@ -31,6 +32,17 @@ export class BenefitsComponent {
   next() { this.current = (this.current + 1) % this.benefits.length; }
   prev() { this.current = (this.current - 1 + this.benefits.length) % this.benefits.length; }
   goTo(i: number) { this.current = i; }
+
+  onTouchStart(e: TouchEvent) {
+    this.touchStartX = e.touches[0].clientX;
+  }
+
+  onTouchEnd(e: TouchEvent) {
+    const diff = this.touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? this.next() : this.prev();
+    }
+  }
 
   benefits: Benefit[] = [
     {

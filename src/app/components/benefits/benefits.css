@@ -231,10 +231,14 @@
 }
 
 @media (max-width: 900px) {
-  .benefits-carousel { height: 320px; }
+  .benefits-carousel {
+    height: 320px;
+    touch-action: pan-y;
+  }
   .benefit-slide { width: 70%; }
   .slide-left { transform: translate(-108%, -50%) scale(0.78); }
   .slide-right { transform: translate(-2%, -50%) scale(0.78); }
+  .arrow-btn { display: none; }
 }
 
 @media (max-width: 576px) {
