@@ -7,21 +7,12 @@ import { Component, HostListener, signal } from '@angular/core';
   styleUrl: './navbar.css'
 })
 export class NavbarComponent {
-  isScrolled  = signal(false);
-  isHidden    = signal(false);
+  isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
-
-  private lastScrollY = 0;
 
   @HostListener('window:scroll')
   onScroll() {
-    const y = window.scrollY;
-    this.isScrolled.set(y > 50);
-
-    if (window.innerWidth <= 900 && !this.isMobileMenuOpen()) {
-      this.isHidden.set(y > this.lastScrollY && y > 80);
-    }
-    this.lastScrollY = y;
+    this.isScrolled.set(window.scrollY > 50);
   }
 
   toggleMenu() {

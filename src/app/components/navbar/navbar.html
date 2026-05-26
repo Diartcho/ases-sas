@@ -1,4 +1,4 @@
-<nav class="navbar" [class.scrolled]="isScrolled()" [class.menu-open]="isMobileMenuOpen()" [class.nav-hidden]="isHidden()">
+<nav class="navbar" [class.scrolled]="isScrolled()" [class.menu-open]="isMobileMenuOpen()">
   <div class="container nav-container">
     <div class="brand" (click)="scrollTo('inicio')">
       <img src="img/aces-logo.png" alt="Grupo Empresarial ACES S.A.S." class="brand-logo">
@@ -10,7 +10,7 @@
       <span></span>
     </button>
 
-    <ul class="nav-links nav-links-desktop" [class.open]="isMobileMenuOpen()">
+    <ul class="nav-links" [class.open]="isMobileMenuOpen()">
       <li><a (click)="scrollTo('inicio')">Inicio</a></li>
       <li><a (click)="scrollTo('quienes-somos')">Quiénes Somos</a></li>
       <li><a (click)="scrollTo('servicios')">Servicios</a></li>
@@ -23,29 +23,6 @@
   </div>
 </nav>
 
-<!-- Menú móvil fuera del nav para evitar problemas con transform -->
-<ul class="nav-links nav-links-mobile" [class.open]="isMobileMenuOpen()">
-  <li><a (click)="scrollTo('inicio')">Inicio</a></li>
-  <li><a (click)="scrollTo('quienes-somos')">Quiénes Somos</a></li>
-  <li><a (click)="scrollTo('servicios')">Servicios</a></li>
-  <li><a (click)="scrollTo('clientes')">Clientes</a></li>
-  <li><a (click)="scrollTo('contacto')">Contacto</a></li>
-  <li>
-    <button class="btn-solicitar" (click)="scrollTo('contacto')">Solicitar Asesoría</button>
-  </li>
-</ul>
-
 @if (isMobileMenuOpen()) {
   <div class="overlay" (click)="closeMenu()"></div>
 }
-
-<button class="hamburger-float"
-  [class.visible]="isHidden() || isMobileMenuOpen()"
-  [class.open]="isMobileMenuOpen()"
-  (click)="toggleMenu()"
-  aria-label="Menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-
