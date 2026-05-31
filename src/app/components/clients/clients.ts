@@ -35,6 +35,13 @@ export class ClientsComponent {
   open(client: Client) { this.selected = client; }
   close() { this.selected = null; }
 
+  requestAdvisory() {
+    this.selected = null;
+    setTimeout(() => {
+      document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+    }, 200);
+  }
+
   clients: Client[] = [
     {
       name: 'Pensionados',
