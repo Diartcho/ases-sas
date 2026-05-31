@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-const WHATSAPP_NUMBER = '573000000000';
+const WHATSAPP_NUMBER = '573246446684';
 
 @Component({
   selector: 'app-hero',
