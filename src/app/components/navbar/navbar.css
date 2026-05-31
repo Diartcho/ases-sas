@@ -94,6 +94,16 @@
   box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
 }
 
+/* Hide mobile-only panel elements on desktop */
+.nav-panel-brand,
+.nav-section-label,
+.nav-panel-footer,
+.nav-item-icon,
+.nav-chevron,
+.panel-close-btn {
+  display: none;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
