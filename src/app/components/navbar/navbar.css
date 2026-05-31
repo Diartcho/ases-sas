@@ -159,8 +159,7 @@
   }
 
   .hamburger span { background: var(--accent); }
-  .hamburger.open { background: rgba(13,43,69,0.08); }
-  .hamburger.open span { background: var(--primary); }
+  .hamburger.open { display: none; }
 
   .nav-links {
     position: fixed;
