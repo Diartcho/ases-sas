@@ -133,13 +133,20 @@
   .navbar { height: 72px; }
   .navbar.scrolled { height: 72px; }
 
+  .nav-container {
+    position: relative;
+    justify-content: center;
+  }
+
   .brand-logo {
     height: 72px;
     transform: scale(2.0) translateY(8px);
-    transform-origin: left center;
+    transform-origin: center center;
   }
 
   .hamburger {
+    position: absolute;
+    right: 1rem;
     display: flex;
     width: 42px;
     height: 42px;
