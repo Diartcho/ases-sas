@@ -98,11 +98,28 @@
 .nav-panel-brand,
 .nav-section-label,
 .nav-panel-footer,
-.nav-item-icon,
 .nav-chevron,
 .panel-close-btn {
   display: none;
 }
+
+/* Desktop icon styling */
+.nav-item-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--accent);
+  opacity: 0.7;
+  display: block;
+}
+
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-links li a:hover .nav-item-icon { opacity: 1; }
 
 .hamburger {
   display: none;
