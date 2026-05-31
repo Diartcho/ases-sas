@@ -107,6 +107,8 @@
 }
 
 @media (max-width: 576px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-top { padding: 3rem 0 2rem; }
   .footer-bottom-content { flex-direction: column; text-align: center; }
+  .footer-brand p { max-width: 100%; }
 }

@@ -172,13 +172,23 @@
 }
 
 @media (max-width: 900px) {
+  .carousel-section { min-height: auto; }
   .carousel-content {
     grid-template-columns: 1fr;
-    padding: 3rem 1.5rem 4rem;
+    padding: 2.5rem 1.25rem 3.5rem;
     text-align: center;
+    gap: 1.5rem;
+    min-height: auto;
   }
   .carousel-subtitle { max-width: 100%; }
   .carousel-cta { align-self: center; }
-  .carousel-image-wrap { aspect-ratio: 16/9; }
-  .carousel-title { font-size: 1.8rem; }
+  .carousel-image-wrap { aspect-ratio: 16/9; border-radius: 14px; }
+  .carousel-title { font-size: 1.7rem; }
+  .carousel-text { gap: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  .carousel-title { font-size: 1.5rem; }
+  .carousel-subtitle { font-size: 0.9rem; }
+  .carousel-content { padding: 2rem 1rem 3rem; }
 }

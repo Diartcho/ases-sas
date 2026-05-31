@@ -194,5 +194,10 @@
 }
 
 @media (max-width: 580px) {
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .services { padding: 4rem 0; }
+  .service-card-img { height: 160px; }
+  .service-card-body { padding: 1.25rem; }
+  .service-card { animation: none; opacity: 1; transform: none; }
+  .services::before, .services::after { display: none; }
 }

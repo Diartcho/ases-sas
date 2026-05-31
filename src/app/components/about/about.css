@@ -227,8 +227,11 @@
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .partners-banner { flex-direction: column; text-align: center; }
+  .about { padding: 4rem 0; }
 }
 
 @media (max-width: 576px) {
-  .partners-banner { padding: 1.25rem 1.25rem; }
+  .partners-banner { padding: 1.25rem; }
+  .about-content h2 { font-size: 1.8rem; }
+  .value-item { padding: 0.85rem 1rem; }
 }
